@@ -47,6 +47,6 @@ Although already know the principles of Html, CSS and Javascript, projects like 
 
 ## Author
 
-- Linkedin - [Add your name here](https://www.linkedin.com/in/felipe-c-de-paula-b1b7b9189/)
+- Linkedin - [Felipe de Paula](https://www.linkedin.com/in/felipe-c-de-paula-b1b7b9189/)
 - Frontend Mentor - [@EmilcyFelipe](https://www.frontendmentor.io/profile/EmilcyFelipe)
 - Twitter - [@felipe_e_m_](https://twitter.com/felipe_e_m_)
