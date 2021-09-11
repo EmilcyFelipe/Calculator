@@ -1,22 +1,28 @@
+@import url(https://fonts.google.com/specimen/Spartan);
+
 *,*:focus{
     margin: 0;
     box-sizing: border-box;
     outline: none;
     border: none;
+    font-family: "Spartan", sans-serif;
+    font-weight: 700;
 }
 :root{
     --main-background: hsl(222, 26%, 31%) ;
     --toggle-background: hsl(223, 31%, 20%);
+    --keypad-background: hsl(223, 31%, 20%);
     --screen-background: hsl(224, 36%, 15%);
     --key-background: hsl(225, 21%, 49%) ;
     --key-shadow: hsl(224, 28%, 35%) ;
     --key-action-background: hsl(6, 63%, 50%) ;
+    --key-toogle:hsl(6, 63%, 50%);
     --key-shadow-action-background: hsl(6, 70%, 34%) ;
-    --key-simbols: hsl(30, 25%, 89%);
-    --key-simbols-shadow:  hsl(28, 16%, 65%);
+    --key-background-secondary: hsl(30, 25%, 89%);
+    --key-background-secondary-shadow:  hsl(28, 16%, 65%);
     --text-primary-color:  hsl(221, 14%, 31%) ;
-    --text-secondary-color: hsl(0, 0, 100%);
-    --text-display-color: #fff;
+    --text-secondary-color: hsl(0, 0%, 100%);
+    --text-sub:hsl(0, 0%, 100%);
 }
 body{
     width: 100vw;
@@ -33,6 +39,7 @@ body{
 }
 
 .calculatorWrapper{
+    min-width: 260px;
     width: 400px;
     height: 450px;
 }
@@ -46,7 +53,7 @@ body{
 }
 
 .headMenu h2{
-    color: var(--text-display-color);
+    color: var(--text-sub);
 }
 
 .themeWrapper{
@@ -57,8 +64,7 @@ body{
 }
 
 .themeWrapper *{
-    color: var(--text-display-color);
-    font-weight: 900;
+    color: var(--text-sub);
 }
 .textTheme{
     font-size: 10px;
@@ -72,14 +78,14 @@ input[type="range"]{
 }
 
 input[type="range"]::-moz-range-thumb{
-    background-color: var(--key-action-background);
+    background-color: var(--key-toogle);
     width: 40px; 
     
 }
 .display{
     width: 100%;
     background-color: var(--screen-background);
-    height: 50px;
+    height: 60px;
     border-radius: 7px;
     display: flex;
     justify-content: center;
@@ -87,6 +93,7 @@ input[type="range"]::-moz-range-thumb{
 }
 
 .display input{
+    width: 100%;
     outline: none;
     border: none;
     background: none;    
@@ -95,13 +102,13 @@ input[type="range"]::-moz-range-thumb{
     unicode-bidi: plaintext;
     text-align: right;
     font-size: 30px;
-    color: var(--text-display-color) ;
+    color: var(--text-sub) ;
 }
 
 .keysWrapper{
     margin-top: 20px;
     border-radius: 7px;
-    background-color: var(--toggle-background);
+    background-color: var(--keypad-background);
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -115,10 +122,11 @@ input[type="range"]::-moz-range-thumb{
 .keysWrapper .key{
     border-radius: 5px;
     color: var(--text-primary-color);
+    background-color: var(--key-background-secondary);
     font-size: 20px;
-    font-weight: 900;
     cursor: pointer;
     transform: scale(.9);
+    box-shadow: inset 0px -3px 0.5px var(--key-background-secondary-shadow) ;
 }
 .keysWrapper .key:active{
     transform: scale(1);
@@ -128,7 +136,8 @@ input[type="range"]::-moz-range-thumb{
 .keysWrapper .key:nth-child(4),
 .keysWrapper .key:nth-child(17){
     background-color: var(--key-background) ;
-    color: var(--text-display-color);
+    color: hsl(0, 0%, 100%);
+    box-shadow:inset 0 -3px var(--key-shadow);
 }
 
 .keysWrapper .key:nth-child(17){
@@ -137,6 +146,7 @@ input[type="range"]::-moz-range-thumb{
 .keysWrapper .key:nth-child(18){
     grid-column: 3 / 5;
     background-color:var(--key-action-background);
-    color:var(--text-display-color);
+    color:var(--text-secondary-color);
+    box-shadow: inset 0 -3px var(--key-shadow-action-background);
 }
 
