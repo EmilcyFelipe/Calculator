@@ -77,11 +77,6 @@ input[type="range"]{
     width: 40px;  
 }
 
-input[type="range"]::-moz-range-thumb{
-    background-color: var(--key-toogle);
-    width: 40px; 
-    
-}
 .display{
     width: 100%;
     background-color: var(--screen-background);

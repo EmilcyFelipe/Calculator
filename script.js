@@ -1,15 +1,28 @@
-
-
 //Catches the element theme input
 let selectTheme = document.querySelector('#theme');
+//Catches the pseudo element root of css
+var themeObject = document.documentElement.style;
+//Selector of keys
+let keys = document.querySelectorAll('.key');
+//Selector of display
+const display = document.querySelectorAll('.displayScreen');
+
+//Get theme saved by user
+function getThemeSaved(){
+    console.log(localStorage.getItem('prefertheme'))
+    if(localStorage.getItem('prefertheme')!=null){
+        themeChange(localStorage.getItem('prefertheme'))
+        selectTheme.value=localStorage.getItem('prefertheme');
+    }
+}
+getThemeSaved();
 
 //Listen the change event from the input range
+//save the value at localStorage and call the function to change the theme
 selectTheme.addEventListener("change",()=>{
+    localStorage.setItem('prefertheme',selectTheme.value)
     themeChange(selectTheme.value)
 })
-
-//Catch the pseudo element root of css
-let themeObject = document.documentElement.style;
 
 //Establish the theme selected from the file themes.js
 function themeChange(theme){
@@ -28,12 +41,7 @@ function themeChange(theme){
     themeObject.setProperty('--text-sub', themes[theme].textSub);
 }
 
-
-//Selectors of keys and display
-let keys = document.querySelectorAll('.key');
-const display = document.querySelectorAll('.displayScreen');
-
-//Add the event click to all keys and insert the values at display
+//Add the event listener click to all keys and insert the values at display
 keys.forEach(key=>{
     key.addEventListener(('click'),()=>{
         if(key.id==='reset'){
@@ -53,11 +61,10 @@ keys.forEach(key=>{
     })
 });
 
-
-
 //Function that calculate the operation
 function operation(){
     display[0].value = eval(display[0].value)
+
 }
 
 
