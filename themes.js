@@ -1,3 +1,4 @@
+//object container of themes
 var themes=[
     {
         'mainbackground': "hsl(222, 26%, 31%)",
