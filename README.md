@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [live site URL here](https://calculator-felipe-de-paula.netlify.app/)
+- Live Site URL: [calculator](https://calculator-felipe-de-paula.netlify.app/)
 
 ### Built with
 
