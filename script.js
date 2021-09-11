@@ -57,9 +57,7 @@ keys.forEach(key=>{
 
 //Function that calculate the operation
 function operation(){
-    let operate = display[0].value ;
-
-    console.log(operate.split("+"))
+    display[0].value = eval(display[0].value)
 }
 
 
